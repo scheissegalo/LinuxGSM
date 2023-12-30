@@ -53,7 +53,7 @@ If you would like to [sponsor](https://linuxgsm.com/sponsor) to the project ther
 
 ## Installation
 
-wget -O linuxgsm.sh https://raw.githubusercontent.com/scheissegalo/LinuxGSM/master/linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh mcserver
+``` wget -O linuxgsm.sh https://raw.githubusercontent.com/scheissegalo/LinuxGSM/master/linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh mcserver ```
 
 ## 🧙‍♂️ Contributors
 
