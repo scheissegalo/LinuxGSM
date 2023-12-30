@@ -10,7 +10,7 @@ moduleselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 jsoninfo=$(
 	cat << EOF
 {
-    "username": "LinuxGSM",
+    "username": "NI-Server",
     "avatar_url": "https://raw.githubusercontent.com/${githubuser}/${githubrepo}/${githubbranch}/lgsm/data/alert_discord_logo.jpg",
     "file": "content",
     "embeds": [
