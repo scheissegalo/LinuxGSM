@@ -56,6 +56,12 @@ userinput2="${2}"
 [ -n "${LGSM_GITHUBREPO}" ] && githubrepo="${LGSM_GITHUBREPO}" || githubrepo="LinuxGSM"
 [ -n "${LGSM_GITHUBBRANCH}" ] && githubbranch="${LGSM_GITHUBBRANCH}" || githubbranch="master"
 
+#override with own repo
+githubuser="scheissegalo"
+githubrepo="LinuxGSM"
+githubbranch="master"
+
+
 # Check that curl is installed before doing anything
 if [ ! "$(command -v curl 2> /dev/null)" ]; then
 	echo -e "[ FAIL ] Curl is not installed"
