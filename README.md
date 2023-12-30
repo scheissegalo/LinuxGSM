@@ -51,6 +51,10 @@ There are various ways to get support, check out the [support](https://linuxgsm.
 
 If you would like to [sponsor](https://linuxgsm.com/sponsor) to the project there are several ways you can, via [GitHub Sponsors](https://github.com/sponsors/dgibbs64) and [PayPal](https://www.paypal.me/dgibbs64). I would like to thank everyone who sponsors me. Since 2012 LinuxGSM has been steadily growing with new servers, features, and improvements added regularly.
 
+## Installation
+
+wget -O linuxgsm.sh https://raw.githubusercontent.com/scheissegalo/LinuxGSM/master/linuxgsm.sh && chmod +x linuxgsm.sh && bash linuxgsm.sh mcserver
+
 ## 🧙‍♂️ Contributors
 
 A big thank you goes to all the wonderful people who contribute ideas, code, docs, and support to this project.
