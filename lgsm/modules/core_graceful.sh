@@ -65,5 +65,3 @@ if [ -n "$1" ]; then
 else
     echo "No action specified. Usage: $0 <action>"
 fi
-
-# Example usage
