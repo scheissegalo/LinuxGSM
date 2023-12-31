@@ -146,7 +146,7 @@ fn_check_steamcmd_exec() {
 
 fn_update_steamcmd_localbuild() {
 	# Gets local build info.
-	print "get localbuild"
+	#echo "get localbuild"
 	fn_print_dots "Checking local build: ${remotelocation}"
 	fn_check_steamcmd_appmanifest
 	# Uses appmanifest to find local build.
@@ -165,7 +165,7 @@ fn_update_steamcmd_localbuild() {
 
 fn_update_steamcmd_remotebuild() {
 	# Get remote build info.
-	print "get remotebuild"
+	#echo "get remotebuild"
 	if [ -d "${steamcmddir}" ]; then
 		cd "${steamcmddir}" || exit
 	fi
@@ -209,7 +209,7 @@ fn_update_steamcmd_remotebuild() {
 }
 
 fn_update_steamcmd_compare() {
-	print "Compairing"
+	#echo "Compairing"
 	fn_print_dots "Checking for update: ${remotelocation}"
 	# Update has been found or force update.
 	if [ "${localbuild}" != "${remotebuildversion}" ] || [ "${forceupdate}" == "1" ]; then
