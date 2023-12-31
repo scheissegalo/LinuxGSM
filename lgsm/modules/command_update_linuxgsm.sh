@@ -4,6 +4,10 @@
 # Contributors: http://linuxgsm.com/contrib
 # Website: https://linuxgsm.com
 # Description: Deletes the modules dir to allow re-downloading of modules from GitHub.
+#override with own repo
+githubuser="scheissegalo"
+githubrepo="LinuxGSM"
+githubbranch="master"
 
 commandname="UPDATE-LGSM"
 commandaction="Updating LinuxGSM"
