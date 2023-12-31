@@ -29,31 +29,3 @@ send_dc_notification() {
 }
 
 #send_dc_notification "The Front Server has an Update available!" "update"
-
-case "$ACTION" in
-    "update")
-        send_dc_notification "**🚀The Front Server has an Update available!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be updated and restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
-        sleep 300
-        send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
-        sleep 300
-        send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
-        sleep 240
-        send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
-        sleep 60
-        ;;
-    "restart")
-        send_dc_notification "**🚀A Restart for The Front Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
-        sleep 300
-        send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
-        sleep 300
-        send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
-        sleep 240
-        send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
-        sleep 60
-        ;;
-    *)
-        echo "Unknown action: $ACTION"
-        return 1
-        ;;
-esac
-
