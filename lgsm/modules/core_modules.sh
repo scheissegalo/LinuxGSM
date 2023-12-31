@@ -64,6 +64,11 @@ core_github.sh() {
 	fn_fetch_module
 }
 
+core_graceful.sh() {
+	modulefile="${FUNCNAME[0]}"
+	fn_fetch_module
+}
+
 # Commands
 
 command_backup.sh() {
