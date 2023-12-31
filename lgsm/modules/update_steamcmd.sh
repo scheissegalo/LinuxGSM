@@ -19,7 +19,7 @@ fn_print_dots "${remotelocation}"
 if [ "${forceupdate}" == "1" ]; then
 	# forceupdate bypasses update checks.
 	if [ "${status}" != "0" ] && [ -v "${status}" ]; then
-		core_graceful.sh
+		core_graceful.sh update
 		fn_print_restart_warning
 		exitbypass=1
 		command_stop.sh

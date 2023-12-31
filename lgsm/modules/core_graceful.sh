@@ -29,11 +29,41 @@ send_dc_notification() {
     }' "$WEBHOOK_URL"
 }
 
+# Function to perform graceful action (update or restart)
+graceful_action() {
+    # Check the action parameter
+    case "$1" in
+        "update")
+            send_dc_notification "**🚀The Front Server has an Update available!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be updated and restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
+            sleep 300
+            send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
+            sleep 300
+            send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
+            sleep 240
+            send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
+            sleep 60
+            ;;
+        "restart")
+            send_dc_notification "**🚀A Restart for The Front Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
+            sleep 300
+            send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
+            sleep 300
+            send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
+            sleep 240
+            send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
+            sleep 60
+            ;;
+        *)
+            echo "Unknown action: $1"
+            ;;
+    esac
+}
+
+# Check if an action parameter is provided
+if [ -n "$1" ]; then
+    graceful_action "$1"
+else
+    echo "No action specified. Usage: $0 <action>"
+fi
+
 # Example usage
-send_dc_notification "**🚀The Front Server has an Update available!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be updated and restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
-sleep 300
-send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
-sleep 300
-send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
-sleep 240
-send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
