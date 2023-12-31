@@ -210,6 +210,8 @@ fn_update_steamcmd_compare() {
 	fn_print_dots "Checking for update: ${remotelocation}"
 	# Update has been found or force update.
 	if [ "${localbuild}" != "${remotebuildversion}" ] || [ "${forceupdate}" == "1" ]; then
+		#Notification before update
+		core_graceful.sh
 		# Create update lockfile.
 		date '+%s' > "${lockdir:?}/update.lock"
 		fn_print_ok_nl "Checking for update: ${remotelocation}"
