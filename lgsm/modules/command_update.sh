@@ -15,6 +15,8 @@ check.sh
 core_logs.sh
 check_last_update.sh
 
+print "command update Called"
+
 if [ "${shortname}" == "ts3" ]; then
 	update_ts3.sh
 elif [ "${shortname}" == "mc" ]; then
