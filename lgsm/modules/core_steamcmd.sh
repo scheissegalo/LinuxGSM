@@ -215,14 +215,25 @@ fn_update_steamcmd_compare() {
 	if [ "${localbuild}" != "${remotebuildversion}" ] || [ "${forceupdate}" == "1" ]; then
 		#Notification before update
 		core_graceful.sh
-		send_dc_notification "**🚀The Front Server has an Update available!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be updated and restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
-		sleep 300
-        send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
-        sleep 300
-        send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
-        sleep 240
-        send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
-        sleep 60
+		if [ "${shortname}" == "tf" ]; then
+			send_dc_notification "**🚀A Restart for The Front Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **15 minutes.**⚠️\n\n📝Note: the servers savegame might lag 10 min behind, best if you go **NOW**, log out and come back in 15 min."
+			sleep 300
+			send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
+			sleep 300
+			send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
+			sleep 240
+			send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
+			sleep 60
+		elif [ "${shortname}" == "sf" ]; then
+			send_dc_notification "**🚀A Restart for The Satisfactory Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **15 minutes.**⚠️"
+			sleep 300
+			send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
+			sleep 300
+			send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
+			sleep 240
+			send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
+			sleep 60
+		fi
 		# Create update lockfile.
 		date '+%s' > "${lockdir:?}/update.lock"
 		fn_print_ok_nl "Checking for update: ${remotelocation}"
