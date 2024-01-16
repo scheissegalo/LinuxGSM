@@ -10,9 +10,18 @@ moduleselfname="$(basename "$(readlink -f "${BASH_SOURCE[0]}")")"
 # Send Notifications
 
 send_dc_notification() {
-    # Check if a message and action are provided
-
-    WEBHOOK_URL="https://discord.com/api/webhooks/1182881544373801041/vDOsAffFfjVQJWW_muvjj5aakHwUI2EkBcUhnSpsBMLCBseVig_EdXDr5dzlOQ61WKq5"
+    if [ "${shortname}" == "tf" ]; then
+        #The front https://discord.com/api/webhooks/1182881544373801041/vDOsAffFfjVQJWW_muvjj5aakHwUI2EkBcUhnSpsBMLCBseVig_EdXDr5dzlOQ61WKq5
+        WEBHOOK_URL="https://discord.com/api/webhooks/1182881544373801041/vDOsAffFfjVQJWW_muvjj5aakHwUI2EkBcUhnSpsBMLCBseVig_EdXDr5dzlOQ61WKq5"
+    elif [ "${shortname}" == "sf" ]; then
+        #Satisfactory
+        WEBHOOK_URL="https://discord.com/api/webhooks/1196185066297102488/ZDVbiTBW2yc7FuzOsBzIj4NprfcCMVFZ-RszdjDtoaCPvkHY_FQvDYgiX3jL_p-Ps0ZL"
+    fi
+    # Check if a message and action are provided https://discord.com/api/webhooks/1191518298504970362/_LzRHOxyHns2zVXRYcTdsOCb0nGsJyvLX32PWcRMkbAbo8Sdn8gQSoxqCM7z8CvCoiy9
+    #TestHook
+    #WEBHOOK_URL="https://discord.com/api/webhooks/1191518298504970362/_LzRHOxyHns2zVXRYcTdsOCb0nGsJyvLX32PWcRMkbAbo8Sdn8gQSoxqCM7z8CvCoiy9"
+    #LiveHook
+    #WEBHOOK_URL="https://discord.com/api/webhooks/1182881544373801041/vDOsAffFfjVQJWW_muvjj5aakHwUI2EkBcUhnSpsBMLCBseVig_EdXDr5dzlOQ61WKq5"
     MESSAGE="$1"
 
     # Customize the bot's username and avatar
