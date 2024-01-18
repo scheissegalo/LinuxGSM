@@ -30,14 +30,8 @@ if [ "${forceupdate}" == "1" ]; then
 			send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
 			sleep 60
 		elif [ "${shortname}" == "sf" ]; then
-			send_dc_notification "**🚀A Restart for The Satisfactory Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **15 minutes.**⚠️"
-			sleep 300
-			send_dc_notification "⚠️**Server Restart in 10 minutes!**⚠️"
-			sleep 300
-			send_dc_notification "⚠️**Server Restart in 5 minutes!**⚠️"
-			sleep 240
-			send_dc_notification "⚠️**Server Restart in 1 minute!**⚠️"
-			sleep 60
+			send_dc_notification "**🚀A Restart for The Satisfactory Server is scheduled!🚀**\n\n⚠️Please stop any action and go to a safe place. The Server will be restarted in **30 Sec.**⚠️"
+			sleep 30
 		fi
 		fn_print_restart_warning
 		exitbypass=1
